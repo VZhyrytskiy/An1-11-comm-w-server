@@ -1,0 +1,20 @@
+<h3>Tasks of</h3>
+<hr />
+<div class="responsive">
+	<table class="table table-condensed table-striped" >
+		<tr>
+			<th>ID</th>
+			<th>Action</th>
+			<th>Done</th>
+			<th>User</th>
+			<th>Deadline</th>
+		</tr>
+		<tr ng-repeat="task in vm.tasks | orderBy: 'action'">
+			<td>{{task.id}}</td>
+			<td>{{task.action}}</td>
+			<td>{{task.done}}</td>
+			<td>{{task.userName}}</td>
+			<td>{{task.deadline}}</td>
+		</tr>
+	</table>
+</div>

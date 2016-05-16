@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Task Manager</title>
+
+	<link href="vendor/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+	<link href="vendor/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet">
+	<link href="css/ng-cloak.css" rel="stylesheet">
+</head>
+<body ng-cloak>
+	<div class="container">
+		<nav class="navbar navbar-default">
+				<a class="navbar-brand" href="index.html">Task Manager</a>
+		</nav>
+	
+		<div class="row">
+			<div class="col-md-2">
+				<ul class="nav nav-pills nav-stacked">
+					<li ui-sref-active="active"><a ui-sref="home">Tasks</a></li>
+					<li ui-sref-active="active"><a ui-sref="users">Users</a></li>
+				</ul>
+			</div>
+			<div class="col-md-10">
+				<div ui-view></div>
+			</div>
+		</div>
+	</div>
+
+	<script src="vendor/angular/angular.js"></script>
+	<script src="vendor/angular-ui-router/release/angular-ui-router.js"></script>
+	<script src="vendor/angular-resource/angular-resource.js"></script>
+
+	<script src="app.js"></script>
+	<script src="app.config.js"></script>
+	
+	<script src="common/constants.js"></script>
+
+	<script src="tasks/tasks.module.js"></script>
+	<script src="tasks/taskList.controller.js"></script>
+	<script src="tasks/addTask.controller.js"></script>
+	<script src="tasks/editTask.controller.js"></script>
+	<script src="tasks/tasksSrvArray.js"></script>
+
+	<script src="users/users.module.js"></script>
+	<script src="users/addUser.controller.js"></script>
+	<script src="users/addUserDetails.controller.js"></script>
+	<script src="users/editUser.controller.js"></script>
+	<script src="users/userList.controller.js"></script>
+	<script src="users/usersSrv.js"></script>
+
+	<script src="userTasks/userTasks.module.js"></script>
+	<script src="userTasks/userTaskList.controller.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

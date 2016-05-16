@@ -1,0 +1,21 @@
+<h3>New Task</h3>
+<form>
+	<div class="form-group" >
+		<label>User</label>
+		<select class="form-control"
+			ng-options="user.name as user.name for user in vm.users" 
+			ng-model="vm.newTask.user.name"></select>
+	</div>
+	<div class="form-group" >
+		<span>Task</span>
+		<input class="form-control" ng-model="vm.newTask.action"/>
+	</div>
+	<div class="form-group">
+		<button class="btn btn-default"
+				ng-click="vm.save(vm.newTask)">Save</button>
+
+		<!-- Task 2 -->
+		<button class="btn btn-default"
+				ng-click="vm.navigate('home')">Cancel</button>
+	</div>
+</form>

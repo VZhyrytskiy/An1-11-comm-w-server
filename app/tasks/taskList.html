@@ -1,0 +1,26 @@
+<div>
+<h3>Tasks</h3>
+<hr />
+<div class="btn-group" role="group" aria-label="...">
+	<button class="btn btn-primary" ng-click="vm.navigate('addTask')">New Task</button>
+	<button class="btn btn-primary" ng-click="vm.refreshTaskList()">Refresh</button>
+</div>
+<table style="margin-top: 20px" class="table table-condensed table-striped" >
+	<tr>
+		<th>ID</th>
+		<th>Action</th>
+		<th>Done</th>
+		<th>User</th>
+		<th>Deadline</th>
+		<th colspan="2">Op</th>
+	</tr>
+	<tr ng-repeat="task in vm.tasks | orderBy: 'action'">
+		<td>{{task._id.$oid}}</td>
+		<td>{{task.action}}</td>
+		<td>{{task.done}}</td>
+		<td>{{task.user.name}}</td>
+		<td>{{task.deadline}}</td>
+		<td><a ui-sref="editTask({id: task._id.$oid})">edit</a></td>
+		<td><a style="cursor: pointer;" ng-click="vm.deleteTask(task)">delete</a></td>
+	</tr>
+</table>
