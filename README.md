@@ -24,9 +24,5 @@ Setup Environment
 4. install gulp from command line: 
 	> npm install -g gulp
 
-5. install dependencies from project folder:
-	> npm install
-	> bower install
-
-6. run server from project folder:
-	> gulp
+5. run project from project folder:
+	> npm start
