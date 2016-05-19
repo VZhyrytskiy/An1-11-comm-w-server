@@ -103,7 +103,7 @@
 		$locationProvider
 			.html5Mode({
 				enabled: false,
-				requireBase: true
+				requireBase: false
 			})
 			.hashPrefix("!");
 	}
