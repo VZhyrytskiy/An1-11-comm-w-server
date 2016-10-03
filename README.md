@@ -1,17 +1,35 @@
-Setup MongoLab
+###Setup MongoLab
 
-1	Create free account on mongoLab (https://mongolab.com/)
+1. Create free account on mongoLab (https://mongolab.com/)
 
-2	http://docs.mongolab.com/
+2. http://docs.mongolab.com/
 
-3	http://docs.mongolab.com/data-api/
+3. http://docs.mongolab.com/data-api/
 
-4	Created task-manager database
+4. Created task-manager database
 
-5	Created tasks and users collections
+5. Created tasks and users collections
+
+Structure of document for tasks collection:
+{
+    "user": {
+        "name": "Alan"
+    },
+    "action": "TestResource",
+    "done": false
+}
+
+Structure of document for users collection:
+{
+    "name": "Vardan",
+    "location": "AM"
+}
+
+Add a few documents to these collections.
 
 
-Setup Environment
+
+###Setup Environment
 
 1. install node.js from https://nodejs.org/en/
 

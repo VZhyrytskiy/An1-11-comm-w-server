@@ -3,14 +3,17 @@
 
 	angular.module("app", [
 		"ui.router",
-		"ngResource",
 		"constants",
 
 		// features
 		"tasks",
 		"users",
 		"userTasks"
-	])
+	]);
+
+	angular.element(document).ready(() => {
+		angular.bootstrap(document, ["app"]);
+	});
 
 })();
 

@@ -8,9 +8,9 @@
 		$stateProvider
 			.state("home", {
 				url: "/",
-				templateUrl: "./tasks/taskList.html",
-				controller: "taskList",
-				controllerAs: "vm",
+				templateUrl: "./tasks/task-list.html",
+				controller: "TaskList",
+				controllerAs: "$ctrl",
 				resolve: {
 					initData: function(tasksSrv) {
 						return tasksSrv.getTasks()
@@ -22,9 +22,9 @@
 			})
 			.state("addTask", {
 				url: "/addTask",
-				templateUrl: "./tasks/addTask.html",
-				controller: "addTask",
-				controllerAs: "vm",
+				templateUrl: "./tasks/add-task.html",
+				controller: "AddTask",
+				controllerAs: "$ctrl",
 				resolve: {
 					initUsers: function(usersSrv) {
 						return usersSrv.getUsers()
@@ -36,9 +36,9 @@
 			})
 			.state("editTask", {
 				url: "/editTask/:id",
-				templateUrl: "./tasks/addTask.html",
-				controller: "editTask",
-				controllerAs: "vm",
+				templateUrl: "./tasks/add-task.html",
+				controller: "EditTask",
+				controllerAs: "$ctrl",
 				resolve: {
 					initData: function($stateParams, tasksSrv) {
 						return tasksSrv.getTaskById($stateParams["id"])
@@ -56,46 +56,46 @@
 			})
 			.state("users", {
 				url: "/users",
-				templateUrl: "./users/userList.html",
-				controller: "userList",
-				controllerAs: "vm"
+				templateUrl: "./users/user-list.html",
+				controller: "UserList",
+				controllerAs: "$ctrl"
 			})
 			.state("userTasks", {
 				url: "/userTasks/:userId",
-				templateUrl: "./userTasks/userTaskList.html",
-				controller: "userTaskList",
-				controllerAs: "vm"
+				templateUrl: "./user-tasks/user-task-list.html",
+				controller: "UserTaskList",
+				controllerAs: "$ctrl"
 			})
 			.state("editUser", {
 				url: "/editUser",
-				templateUrl: "./users/editUser.html",
-				controller: "editUser",
-				controllerAs: "vm"
+				templateUrl: "./users/edit-user.html",
+				controller: "EditUser",
+				controllerAs: "$ctrl"
 			})
 			.state("addUser", {
 				abstract: true,
 				url: "/addUser",
-				templateUrl: "./users/addUser.html",
-				controller: "addUser",
-				controllerAs: "vm"
+				templateUrl: "./users/add-user.html",
+				controller: "AddUser",
+				controllerAs: "$ctrl"
 			})
 				.state("addUser.General", {
 					url: "/General",
-					templateUrl: "./users/addUserGeneral.html",
-					controller: "addUserDetails",
-					controllerAs: "vm"
+					templateUrl: "./users/add-user-general.html",
+					controller: "AddUserDetails",
+					controllerAs: "$ctrl"
 				})
 				.state("addUser.Cost", {
 					url: "/Cost",
-					templateUrl: "./users/addUserCost.html",
-					controller: "addUserDetails",
-					controllerAs: "vm"
+					templateUrl: "./users/add-user-cost.html",
+					controller: "AddUserDetails",
+					controllerAs: "$ctrl"
 				})
 				.state("addUser.Notes", {
 					url: "/Notes",
-					templateUrl: "./users/addUserNotes.html",
-					controller: "addUserDetails",
-					controllerAs: "vm"
+					templateUrl: "./users/add-user-notes.html",
+					controller: "AddUserDetails",
+					controllerAs: "$ctrl"
 				});
 
 		$urlRouterProvider.otherwise("/");
@@ -104,7 +104,6 @@
 			.html5Mode({
 				enabled: false,
 				requireBase: false
-			})
-			.hashPrefix("!");
+			});
 	}
 })();
