@@ -1,0 +1,22 @@
+<h3>Users</h3>
+<div class="btn-group" role="group" aria-label="...">
+	<button class="btn btn-primary" ng-click="$ctrl.navigate('addUser.General')">New User</button>
+</div>
+<table class="table table-condensed table-striped" >
+	<tr>
+		<th>ID</th>
+		<th>Name</th>
+		<th>Location</th>
+		<th>Op</th>
+	</tr>
+	<tr ng-repeat="item in $ctrl.users">
+		<td>{{item.id}}</td>
+		<td><a ui-sref="userTasks({userId: item.name})">{{item.name}}</a></td>
+		<td>{{item.location}}</td>
+
+		<td>
+			
+		</td>
+
+	</tr>
+</table>
